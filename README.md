@@ -1,2 +1,2 @@
 # myFullStackApp
-A ReactJs-NodeJs-MongoDB practice
+Building a A ReactJs-NodeJs-MongoDB with ES6
