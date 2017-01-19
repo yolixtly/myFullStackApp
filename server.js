@@ -1,5 +1,8 @@
 import config from './config';
+import fs from 'fs';
 import express from 'express';
+
+
 
 const server = express();
 
@@ -8,7 +11,9 @@ server.get('/', (req,res) => {
 });
 
 server.get('/about.html', (req,res) => {
-  res.send('the about page');
+  fs.readFile('./about.html',(err, data) => {
+    res.send(data.toString());
+  });
 });
 
 server.listen(config.port, ()=> {
