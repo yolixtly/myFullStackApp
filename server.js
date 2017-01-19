@@ -1,4 +1,8 @@
-import config, { nodeEnv, logStarts } from './config';
+import https from 'https';
 
-console.log(config, nodeEnv);
-logStarts('This is the message')
+https.get('https://www.lynda.com', res => {
+  console.log('Response status code: ', res.statusCode);
+  res.on('data', chunk => {
+    console.log(chunk.toString());
+  });
+});
