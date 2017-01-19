@@ -5,8 +5,12 @@ import apiRouter from './api';
 
 const server = express();
 
+//seting up the template engine EJS
+server.set('view engine', 'ejs');
 server.get('/', (req,res) => {
-  res.send('Hello Express');
+  res.render('index', {
+    content: 'hello from Express and <h1>EJS</h1>'
+  });
 });
 
 //serving a static file with express
