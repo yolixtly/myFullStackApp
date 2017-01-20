@@ -59,12 +59,15 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var color = Math.random() > 0.5 ? 'hotpink' : 'green';
+	console.log('Color should be: ' + color);
 	_reactDom2.default.render(
 	// React.createElement('h2', null, 'Hello React'),
 	_react2.default.createElement(
 	  'h2',
-	  { className: 'text-center' },
-	  'Hello React with JSX!! This Works!'
+	  { className: 'text-center', style: { color: color } },
+	  'Hello React with JSX!! This Works!',
+	  Math.random()
 	), document.getElementById('root'));
 
 /***/ },
