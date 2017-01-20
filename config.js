@@ -12,5 +12,5 @@ export const logStarts = function(message){
 
 //export defaults, does not require destructuring
 export default {
-  port: env.PORT || 8080
+  port: env.PORT || 3000
 };

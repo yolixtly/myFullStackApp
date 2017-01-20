@@ -63,10 +63,9 @@
 	// React.createElement('h2', null, 'Hello React'),
 	_react2.default.createElement(
 	  'h2',
-	  null,
-	  'hello react with JSX!! -- ',
-	  Math.random()
-	), document.getElementbyId('root'));
+	  { className: 'text-center' },
+	  'Hello React with JSX!! This Works!'
+	), document.getElementById('root'));
 
 /***/ },
 /* 1 */
