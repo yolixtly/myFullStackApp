@@ -66,6 +66,14 @@
 	_reactDom2.default.render(
 	// React.createElement('h2', null, 'Hello React'),
 	_react2.default.createElement(_app2.default, null), document.getElementById('root'));
+	
+	setTimeout(function () {
+	  _reactDom2.default.render(_react2.default.createElement(
+	    'h2',
+	    null,
+	    ' ... New Component Here '
+	  ), document.getElementById('root'));
+	}, 1000);
 
 /***/ },
 /* 1 */
@@ -22125,6 +22133,18 @@
 	  }
 	
 	  _createClass(App, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      console.log('Component Did Mount');
+	      debugger;
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      console.log('Component Will UnMount');
+	      debugger;
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
