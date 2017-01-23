@@ -1,17 +1,14 @@
 import config from './config';
 import apiRouter from './api';
-
 import express from 'express';
 const server = express();
 
 //seting up the template engine EJS
 server.set('view engine', 'ejs');
-
 //curl http://localhost:3000/hiYolix
 server.get('/hiYolix', (req, res) => {
   res.send('Hello from SERVER!');
 });
-
 
 server.get('/', (req,res) => {
   res.render('index', {
