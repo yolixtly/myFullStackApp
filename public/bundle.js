@@ -49,11 +49,6 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.color = undefined;
-	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -62,47 +57,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
+	var _app = __webpack_require__(/*! ./components/app */ 179);
+	
+	var _app2 = _interopRequireDefault(_app);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var color = exports.color = Math.random() > 0.5 ? 'hotpink' : 'green';
-	console.log('Color should be: ' + color);
-	
-	var Header = function Header(_ref) {
-	  var message = _ref.message;
-	
-	  return _react2.default.createElement(
-	    'h2',
-	    { className: 'text-center', style: { color: color } },
-	    message
-	  );
-	};
-	
-	//Validation for Props - It only works in Development mode for Performance reasons
-	Header.propTypes = {
-	  message: _react2.default.PropTypes.string.isRequired
-	};
-	
-	var App = function App(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    _react2.default.createElement(Header, { message: 'Naming Contests' }),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'text-right' },
-	      'Made by ',
-	      props.name
-	    )
-	  );
-	};
-	
-	// defaultProps will be used to ensure that this.props.name will have a value if it was not specified by the parent component
-	App.defaultProps = {
-	  name: 'Yoli Anderson'
-	};
 	_reactDom2.default.render(
 	// React.createElement('h2', null, 'Hello React'),
-	_react2.default.createElement(App, { headerMessage: 'Hello Props!' }), document.getElementById('root'));
+	_react2.default.createElement(_app2.default, null), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -22110,6 +22073,94 @@
 	
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 3)))
+
+/***/ },
+/* 178 */,
+/* 179 */
+/*!*******************************!*\
+  !*** ./src/components/app.js ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _header = __webpack_require__(/*! ./header */ 180);
+	
+	var _header2 = _interopRequireDefault(_header);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var App = function App(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_header2.default, { message: 'Naming Contests' }),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'text-right' },
+	      'Made by ',
+	      props.name
+	    )
+	  );
+	};
+	
+	// defaultProps will be used to ensure that this.props.name will have a value if it was not specified by the parent component
+	App.defaultProps = {
+	  name: 'Yoli Anderson'
+	};
+	
+	exports.default = App;
+
+/***/ },
+/* 180 */
+/*!**********************************!*\
+  !*** ./src/components/header.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var color = Math.random() > 0.5 ? 'hotpink' : 'green';
+	console.log('Color should be: ' + color);
+	
+	var Header = function Header(_ref) {
+	  var message = _ref.message;
+	
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h2',
+	      { className: 'text-center', style: { color: color } },
+	      message
+	    )
+	  );
+	};
+	
+	//Validation for Props - It only works in Development mode for Performance reasons
+	Header.propTypes = {
+	  message: _react2.default.PropTypes.string.isRequired
+	};
+	
+	exports.default = Header;
 
 /***/ }
 /******/ ]);
