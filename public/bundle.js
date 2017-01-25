@@ -57,15 +57,20 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
+	var _testData = __webpack_require__(/*! ./testData */ 180);
+	
+	var _testData2 = _interopRequireDefault(_testData);
+	
 	var _app = __webpack_require__(/*! ./components/app */ 178);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	console.log(_testData2.default);
 	_reactDom2.default.render(
 	// React.createElement('h2', null, 'Hello React'),
-	_react2.default.createElement(_app2.default, null), document.getElementById('root'));
+	_react2.default.createElement(_app2.default, { goals: 'data.contests' }), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -22206,6 +22211,33 @@
 	};
 	
 	exports.default = Header;
+
+/***/ },
+/* 180 */
+/*!***************************!*\
+  !*** ./src/testData.json ***!
+  \***************************/
+/***/ function(module, exports) {
+
+	module.exports = {
+		"Goals 2017": [
+			{
+				"id": 1,
+				"goalName": "Create a Blog",
+				"goalReason": "To have accountability, get people to know me, create a journey of how I get to my goals, inspire people to code"
+			},
+			{
+				"id": 2,
+				"goalName": "Exercise Every Day at least 30 min",
+				"goalReason": "I love to be fit, feel heatlhy and feel happy/good. Being active gives me that and more"
+			},
+			{
+				"id": 3,
+				"goalName": "Code and learn something new everyday",
+				"goalReason": "My goal is to become a confident Programmer and make of it my passion and 6 figure career. Consistency will bring that and more"
+			}
+		]
+	};
 
 /***/ }
 /******/ ]);

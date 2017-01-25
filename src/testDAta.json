@@ -1,0 +1,19 @@
+{
+  "Goals 2017" : [
+    {
+      "id": 1,
+      "goalName" : "Create a Blog",
+      "goalReason" : "To have accountability, get people to know me, create a journey of how I get to my goals, inspire people to code"
+    },
+    {
+      "id": 2,
+      "goalName" : "Exercise Every Day at least 30 min",
+      "goalReason" : "I love to be fit, feel heatlhy and feel happy/good. Being active gives me that and more"
+    },
+    {
+      "id": 3,
+      "goalName" : "Code and learn something new everyday",
+      "goalReason" : "My goal is to become a confident Programmer and make of it my passion and 6 figure career. Consistency will bring that and more"
+    }
+  ]
+}
