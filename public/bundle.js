@@ -65,7 +65,7 @@
 	
 	_reactDom2.default.render(
 	// React.createElement('h2', null, 'Hello React'),
-	_react2.default.createElement(_app2.default, null), document.getElementById('root'));
+	_react2.default.createElement(_app2.default, { initialGoals: [] }), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -22135,7 +22135,7 @@
 	
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 	      pageHeader: "Goals 2017",
-	      goals: []
+	      goals: _this.props.initialGoals
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	

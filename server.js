@@ -18,11 +18,15 @@ server.get('/hiYolix', (req, res) => {
   res.send('Hello from SERVER!');
 });
 
-import './serverRender';
+import serverRender from './serverRender';
 server.get('/', (req,res) => {
-  res.render('index', {
-    content: '...Waiting for REACT to LOAD'
-  });
+  serverRender()
+  .then( content => {
+    res.render('index', {
+      content
+    });
+  })
+  .catch(console.error);
 });
 
 //Using Router to distribute content in a cleaner and modular way

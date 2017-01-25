@@ -6,7 +6,7 @@ import axios from 'axios';
 class App extends React.Component {
     state = {
       pageHeader: "Goals 2017",
-      goals: []
+      goals: this.props.initialGoals
     };
   componentDidMount(){
     axios.get('/api/goals')

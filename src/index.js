@@ -5,6 +5,6 @@ import App from './components/app';
 
 ReactDOM.render(
   // React.createElement('h2', null, 'Hello React'),
-<App />,
+<App initialGoals={[]}/>,
     document.getElementById('root')
 );
