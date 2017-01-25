@@ -70,7 +70,7 @@
 	console.log(_testData2.default);
 	_reactDom2.default.render(
 	// React.createElement('h2', null, 'Hello React'),
-	_react2.default.createElement(_app2.default, { goals: 'data.contests' }), document.getElementById('root'));
+	_react2.default.createElement(_app2.default, { goals: _testData2.default.Goals2017 }), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -22092,6 +22092,8 @@
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(/*! react */ 1);
@@ -22101,6 +22103,10 @@
 	var _header = __webpack_require__(/*! ./header */ 179);
 	
 	var _header2 = _interopRequireDefault(_header);
+	
+	var _goalPreview = __webpack_require__(/*! ./goalPreview */ 181);
+	
+	var _goalPreview2 = _interopRequireDefault(_goalPreview);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22125,7 +22131,7 @@
 	    }
 	
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      pageHeader: "Naming Contests"
+	      pageHeader: "Goals 2017"
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
@@ -22138,6 +22144,13 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var goals = this.props.goals.map(function (goal) {
+	        return _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(_goalPreview2.default, _extends({}, goal, { key: goal.id }))
+	        );
+	      });
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -22145,7 +22158,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
-	          this.state.test
+	          _react2.default.createElement(
+	            'ol',
+	            null,
+	            goals
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -22220,7 +22237,7 @@
 /***/ function(module, exports) {
 
 	module.exports = {
-		"Goals 2017": [
+		"Goals2017": [
 			{
 				"id": 1,
 				"goalName": "Create a Blog",
@@ -22238,6 +22255,40 @@
 			}
 		]
 	};
+
+/***/ },
+/* 181 */
+/*!***************************************!*\
+  !*** ./src/components/goalPreview.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var GoalPreview = function GoalPreview(goal) {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "ContestPreview" },
+	    _react2.default.createElement(
+	      "div",
+	      null,
+	      goal.goalName
+	    ),
+	    goal.goalReason
+	  );
+	};
+	
+	exports.default = GoalPreview;
 
 /***/ }
 /******/ ]);

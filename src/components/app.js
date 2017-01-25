@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from './header';
+import GoalPreview from './goalPreview';
+
 
 
 class App extends React.Component {
     state = {
-      pageHeader: "Naming Contests"
+      pageHeader: "Goals 2017",
     };
   componentDidMount(){
 
@@ -13,11 +15,16 @@ class App extends React.Component {
 
   }
   render(){
+    var goals = this.props.goals.map(goal =>
+      <li><GoalPreview {...goal} key={goal.id} /></li>
+    );
     return (
   <div>
     <Header message={this.state.pageHeader}/>
     <div>
-      {this.state.test}
+      <ol>
+        {goals}
+      </ol>
     </div>
     <div className="text-right">
       Made by {this.props.name}

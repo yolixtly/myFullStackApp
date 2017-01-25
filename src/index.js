@@ -7,6 +7,6 @@ import App from './components/app';
 console.log(data);
 ReactDOM.render(
   // React.createElement('h2', null, 'Hello React'),
-<App  goals="data.contests"/>,
+<App  goals={data.Goals2017}/>,
     document.getElementById('root')
 );
