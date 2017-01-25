@@ -57,15 +57,21 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
+	var _axios = __webpack_require__(/*! axios */ 182);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
 	var _app = __webpack_require__(/*! ./components/app */ 178);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_reactDom2.default.render(
-	// React.createElement('h2', null, 'Hello React'),
-	_react2.default.createElement(_app2.default, { initialGoals: [] }), document.getElementById('root'));
+	_axios2.default.get('/api/goals').then(function (res) {
+	  _reactDom2.default.render(
+	  // React.createElement('h2', null, 'Hello React'),
+	  _react2.default.createElement(_app2.default, { initialGoals: res.data.goals }), document.getElementById('root'));
+	}).catch(console.error);
 
 /***/ },
 /* 1 */
@@ -22107,10 +22113,6 @@
 	
 	var _testData2 = _interopRequireDefault(_testData);
 	
-	var _axios = __webpack_require__(/*! axios */ 182);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22141,15 +22143,7 @@
 	
 	  _createClass(App, [{
 	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _this2 = this;
-	
-	      _axios2.default.get('/api/goals').then(function (res) {
-	        _this2.setState({
-	          goals: res.data.goals
-	        });
-	      });
-	    }
+	    value: function componentDidMount() {}
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {}
