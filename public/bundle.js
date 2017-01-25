@@ -57,20 +57,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _testData = __webpack_require__(/*! ./testData */ 178);
-	
-	var _testData2 = _interopRequireDefault(_testData);
-	
 	var _app = __webpack_require__(/*! ./components/app */ 179);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	console.log(_testData2.default);
 	_reactDom2.default.render(
 	// React.createElement('h2', null, 'Hello React'),
-	_react2.default.createElement(_app2.default, { goals: _testData2.default.Goals2017 }), document.getElementById('root'));
+	_react2.default.createElement(_app2.default, null), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -22135,6 +22130,10 @@
 	
 	var _goalPreview2 = _interopRequireDefault(_goalPreview);
 	
+	var _testData = __webpack_require__(/*! ../testData */ 178);
+	
+	var _testData2 = _interopRequireDefault(_testData);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22158,20 +22157,25 @@
 	    }
 	
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      pageHeader: "Goals 2017"
+	      pageHeader: "Goals 2017",
+	      goals: []
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
 	  _createClass(App, [{
 	    key: 'componentDidMount',
-	    value: function componentDidMount() {}
+	    value: function componentDidMount() {
+	      this.setState({
+	        goals: _testData2.default.Goals2017
+	      });
+	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {}
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var goals = this.props.goals.map(function (goal) {
+	      var goals = this.state.goals.map(function (goal) {
 	        return _react2.default.createElement(_goalPreview2.default, _extends({}, goal, { key: goal.id }));
 	      });
 	      return _react2.default.createElement(

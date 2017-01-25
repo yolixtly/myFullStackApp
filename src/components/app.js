@@ -1,21 +1,22 @@
 import React from 'react';
 import Header from './header';
 import GoalPreview from './goalPreview';
-
-
-
+import data from '../testData';
 class App extends React.Component {
     state = {
       pageHeader: "Goals 2017",
+      goals: []
     };
   componentDidMount(){
-
+    this.setState({
+      goals: data.Goals2017
+    });
   }
   componentWillUnmount(){
 
   }
   render(){
-    var goals = this.props.goals.map(goal =>
+    var goals = this.state.goals.map(goal =>
       <GoalPreview {...goal} key={goal.id} />
     );
     return (
