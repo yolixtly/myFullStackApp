@@ -2,15 +2,19 @@ import React from 'react';
 import Header from './header';
 import GoalPreview from './goalPreview';
 import data from '../testData';
+import axios from 'axios';
 class App extends React.Component {
     state = {
       pageHeader: "Goals 2017",
       goals: []
     };
   componentDidMount(){
-    this.setState({
-      goals: data.Goals2017
-    });
+    axios.get('/api/goals')
+      .then(res => {
+        this.setState({
+          goals: res.data.goals
+        });
+      });
   }
   componentWillUnmount(){
 
