@@ -18,9 +18,10 @@ server.get('/hiYolix', (req, res) => {
   res.send('Hello from SERVER!');
 });
 
+import './serverRender';
 server.get('/', (req,res) => {
   res.render('index', {
-    content: 'This is comming directly from Server because we are integrating REACTJS!'
+    content: '...Waiting for REACT to LOAD'
   });
 });
 
@@ -30,6 +31,8 @@ server.use('/api', apiRouter);
 //serving a static file with express --> renders about.html
 server.use(express.static('public'));
 
-server.listen(config.port, ()=> {
+server.listen(config.port, config.host, ()=> {
   console.info('Express listening on port', config.port);
+  console.info('Express listening with host', config.host);
+
 });
