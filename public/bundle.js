@@ -57,11 +57,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _testData = __webpack_require__(/*! ./testData */ 180);
+	var _testData = __webpack_require__(/*! ./testData */ 178);
 	
 	var _testData2 = _interopRequireDefault(_testData);
 	
-	var _app = __webpack_require__(/*! ./components/app */ 178);
+	var _app = __webpack_require__(/*! ./components/app */ 179);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
@@ -22081,6 +22081,33 @@
 
 /***/ },
 /* 178 */
+/*!***************************!*\
+  !*** ./src/testData.json ***!
+  \***************************/
+/***/ function(module, exports) {
+
+	module.exports = {
+		"Goals2017": [
+			{
+				"id": 1,
+				"goalName": "Create a Blog",
+				"goalReason": "To have accountability, get people to know me, create a journey of how I get to my goals, inspire people to code"
+			},
+			{
+				"id": 2,
+				"goalName": "Exercise Every Day at least 30 min",
+				"goalReason": "I love to be fit, feel heatlhy and feel happy/good. Being active gives me that and more"
+			},
+			{
+				"id": 3,
+				"goalName": "Code and learn something new everyday",
+				"goalReason": "My goal is to become a confident Programmer and make of it my passion and 6 figure career. Consistency will bring that and more"
+			}
+		]
+	};
+
+/***/ },
+/* 179 */
 /*!*******************************!*\
   !*** ./src/components/app.js ***!
   \*******************************/
@@ -22100,7 +22127,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _header = __webpack_require__(/*! ./header */ 179);
+	var _header = __webpack_require__(/*! ./header */ 180);
 	
 	var _header2 = _interopRequireDefault(_header);
 	
@@ -22145,11 +22172,7 @@
 	    key: 'render',
 	    value: function render() {
 	      var goals = this.props.goals.map(function (goal) {
-	        return _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(_goalPreview2.default, _extends({}, goal, { key: goal.id }))
-	        );
+	        return _react2.default.createElement(_goalPreview2.default, _extends({}, goal, { key: goal.id }));
 	      });
 	      return _react2.default.createElement(
 	        'div',
@@ -22158,11 +22181,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
-	          _react2.default.createElement(
-	            'ol',
-	            null,
-	            goals
-	          )
+	          goals
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -22187,7 +22206,7 @@
 	exports.default = App;
 
 /***/ },
-/* 179 */
+/* 180 */
 /*!**********************************!*\
   !*** ./src/components/header.js ***!
   \**********************************/
@@ -22230,33 +22249,6 @@
 	exports.default = Header;
 
 /***/ },
-/* 180 */
-/*!***************************!*\
-  !*** ./src/testData.json ***!
-  \***************************/
-/***/ function(module, exports) {
-
-	module.exports = {
-		"Goals2017": [
-			{
-				"id": 1,
-				"goalName": "Create a Blog",
-				"goalReason": "To have accountability, get people to know me, create a journey of how I get to my goals, inspire people to code"
-			},
-			{
-				"id": 2,
-				"goalName": "Exercise Every Day at least 30 min",
-				"goalReason": "I love to be fit, feel heatlhy and feel happy/good. Being active gives me that and more"
-			},
-			{
-				"id": 3,
-				"goalName": "Code and learn something new everyday",
-				"goalReason": "My goal is to become a confident Programmer and make of it my passion and 6 figure career. Consistency will bring that and more"
-			}
-		]
-	};
-
-/***/ },
 /* 181 */
 /*!***************************************!*\
   !*** ./src/components/goalPreview.js ***!
@@ -22278,13 +22270,17 @@
 	var GoalPreview = function GoalPreview(goal) {
 	  return _react2.default.createElement(
 	    "div",
-	    { className: "ContestPreview" },
+	    { className: "GoalPreview" },
 	    _react2.default.createElement(
 	      "div",
-	      null,
+	      { className: "goal-name" },
 	      goal.goalName
 	    ),
-	    goal.goalReason
+	    _react2.default.createElement(
+	      "div",
+	      { className: "goal-reason" },
+	      goal.goalReason
+	    )
 	  );
 	};
 	

@@ -1,8 +1,16 @@
 import config from './config';
 import apiRouter from './api';
 import express from 'express';
+import sassMiddleware from 'node-sass-middleware';
+import path from 'path';
+
 const server = express();
 
+//2 options using Node vs Webpack . with node we use it directly from the server!
+server.use(sassMiddleware({
+  src: path.join(__dirname, 'sass'),
+  dest: path.join(__dirname, 'public')
+}))
 //seting up the template engine EJS
 server.set('view engine', 'ejs');
 //curl http://localhost:3000/hiYolix

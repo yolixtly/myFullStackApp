@@ -16,15 +16,13 @@ class App extends React.Component {
   }
   render(){
     var goals = this.props.goals.map(goal =>
-      <li><GoalPreview {...goal} key={goal.id} /></li>
+      <GoalPreview {...goal} key={goal.id} />
     );
     return (
   <div>
     <Header message={this.state.pageHeader}/>
     <div>
-      <ol>
         {goals}
-      </ol>
     </div>
     <div className="text-right">
       Made by {this.props.name}
